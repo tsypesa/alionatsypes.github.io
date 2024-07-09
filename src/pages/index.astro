@@ -1,78 +1,121 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+<BaseLayout title="Home" sideBarActiveItemID="home">
+  <div class="pb-12 mt-5 bg-light-blue p-8 rounded-lg">
+    <div class="text-5xl font-bold text-dark-blue">Aliona Tsypes, PhD</div>
+    <div class="text-3xl py-3 font-bold text-dark-blue"></div>
     <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+      <text class="text-lg text-dark-blue">
+        I am an Assistant Professor of Psychiatry at the University of Pittsburgh and a licensed psychologist. In my research, I combine electroencephalography, computational modeling, and ecological momentary assessment to improve the understanding and treatment of suicidal thoughts and behaviors. I am particularly interested in uncovering how alterations in value-based decision-making contribute to suicide risk and how protective factors may buffer against this risk.
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
+      <a class="btn btn-outline" href="https://www.psychiatry.pitt.edu/about-us/our-people/faculty/aliona-tsypes-phd" target="_blank"> Faculty Page </a>
+      <a href="https://scholar.google.com/citations?user=h30aBXUAAAAJ&hl=en" target="_blank" class="btn btn-outline ml-5">
+        Google Scholar
+      </a>
+      <a href="/cv.pdf" target="_blank" class="btn btn-outline ml-5">
+        CV
       </a>
     </div>
   </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  <div class="divider my-8"></div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 text-dark-blue">Representative Publications</div>
+  </div>
+  <div class="publications">
+    <div class="publication">
+      <p class="publication-desc">
+        <a href="https://jamanetwork.com/journals/jamapsychiatry" target="_blank" class="publication-link">Tsypes, A., Hallquist, M.N., Ianni, A., Kaurin, A., Wright, A.G.C., & Dombrovski, A.Y. (in press). Exploration-exploitation and suicidal behavior in borderline personality disorder and depression. JAMA Psychiatry.</a>
+      </p>
+      <p class="summary">
+        This study used behavioral experiments and reinforcement learning (RL) modeling to explore decision-making in people with borderline personality disorder (BPD) and late-life depression. We found that serious suicidal behavior is linked with the inability to shift away from unrewarded choices, resulting in under-exploration. This inflexible behavior predicted daily suicidal ideation. Conversely, low-lethality suicidal behavior was associated with excessive shifts after both rewarded and unrewarded actions. These patterns were not explained by confounding factors like medication exposure or depressive symptoms.
+        Our findings align with previous research linking high-lethality suicidal behavior to deficits in learning and behavioral adaptation. High-risk individuals tended to stick with unrewarded choices, exploring only a limited subset of options under time pressure. This behavior diverges from other psychopathologies, such as schizophrenia, and suggests multiple deficits contribute to suicidal risk. The results support the view that suicidal behavior can be seen as a decision accident, where crisis demands exceed decision capacity. In therapy, practicing exploration of new solutions may help people avoid defaulting to suicide-focused options.
+        The study challenges the continuum model of suicidal behavior, showing consistent behavioral differences between high- and low-lethality attempters. High-lethality attempts are marked by narrow and inflexible choices, while low-lethality attempts involve excessive behavioral plasticity in response to failures. Maximum attempt lethality should be considered a key dimension in studying suicidal behavior. Contrary to expectations, we found no evidence that suicidal individuals fail to exploit the best previously sampled options, suggesting that suicidal behavior reflects a mix of overly rigid and erratic patterns rather than simple insensitivity to long-term value. Overall, these findings highlight the need for a broader understanding of individual differences in decision-making related to suicide risk.
+      </p>
+    </div>
+
+    <div class="publication">
+      <p class="publication-desc">
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8957575/" target="_blank" class="publication-link">Tsypes A, Kaurin A, Wright AGC, Hallquist MN, Dombrovski AY. Protective effects of reasons for living against suicidal ideation in daily life. J Psychiatr Res. 2022 Apr;148:174–180.</a>
+      </p>
+      <p class="summary">
+        This study examined the daily link between Reasons for Living (RFL) and suicidal ideation in people with borderline personality disorder (BPD), focusing on the moderating effects of the Big Five personality traits. Daily endorsements of RFL were negatively associated with suicidal ideation, meaning on days when people thought more about their RFL, they were less likely to think of suicide. However, individuals with higher average RFL did not necessarily report lower suicidal ideation levels. Daily fluctuations accounted for about 40% of RFL variance, suggesting a mix of state- and trait-like influences. Notably, suicide attempters endorsed RFL less frequently than non-attempters, but the protective effect of RFL was similar across both groups and particularly strong in those with higher average suicidal ideation.
+        The study also found that extraversion influenced RFL. Those high in extraversion thought about their RFL more frequently, though this weakened the protective effect against daily suicidal ideation, especially in those with lower extraversion. This suggests that the cognitive and affective processes involved in RFL contemplation are diverse, with only some offering protection against suicidal thoughts. Clinically, these findings highlight the importance of making RFL more salient in the moment, particularly for those with high suicidal ideation. Interventions should focus on increasing the emotional value of RFL, such as through savoring or positive affect stimulation. This approach could be beneficial in preventing suicidal crises by making deterrents more accessible and emotionally impactful.
+      </p>
+    </div>
+
+    <div class="publication">
+      <p class="publication-desc">
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8893041/" target="_blank" class="publication-link">Tsypes A, Szanto K, Bridge JA, Brown VM, Keilp JG, Dombrovski AY. Delay discounting in suicidal behavior: Myopic preference or inconsistent valuation? J Psychopathol Clin Sci. 2022 Jan;131(1):34–44.</a>
+      </p>
+      <p class="summary">
+        Across three samples, high-lethality suicide attempters were the least sensitive to the overall values of prospects. This link between inconsistent valuation and the severity of suicidal behavior, robust against cognitive confounds and comorbidities, suggests a specific role for this deficit in suicidal behavior.
+        High discount rates are often associated with impulsivity and externalizing psychopathology, but our findings highlight inconsistent valuation as a critical vulnerability in suicidal behavior. This inconsistency hinders the ability to integrate choice attributes like magnitude and probability, leading to poor decision-making. In crises, this may make people more likely to misestimate or fluctuate in the perceived value of suicide, neglecting deterrents and the benefits of alternative solutions.
+        Our study, validated across three clinical samples, emphasizes the importance of considering both consistency and discount rates in delay discounting. Clinically, interventions during moments of suicidal ambivalence—when the values of suicide versus alternative options are close—can be effective. Strategies should focus on enhancing deterrents, reinforcing alternative solutions, and deferring final decisions. Psychoeducation on decision competence impairments, such as inconsistent valuation, can help recruit support and develop compensatory strategies. These findings support the decision accident account of suicidal behavior, enriching the literature on the neurocognitive diathesis.
+      </p>
+    </div>
+
+    <div class="publication">
+      <p class="publication-desc">
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7581535/" target="_blank" class="publication-link">Tsypes A, Owens M, Gibb BE. Reward Responsiveness in Suicide Attempters: An Electroencephalography/Event-Related Potential Study. Biol Psychiatry Cogn Neurosci Neuroimaging. 2021 Jan;6(1):99–106.</a>
+      </p>
+      <p class="summary">
+        This study aimed to investigate reward-related abnormalities in suicide attempters using the Research Domain Criteria (RDoC) project of the National Institute of Mental Health framework. We found significant differences in the cue-P3 amplitude between suicide attempters and non-attempters, indicating that attempters have trouble distinguishing between reward-predicting and non-reward-predicting stimuli. This deficit in reward anticipation aligns with previous findings in adolescent self-injurious individuals but extends to adult suicide attempters of both sexes. These results suggest that suicide attempters have specific deficits in attention allocation towards reward-predicting stimuli. 
+        Additionally, while there were no significant differences in the ΔRewP amplitude, suicide attempters exhibited lower feedback-related delta power in the gain versus loss condition compared to non-attempters. This suggests specific abnormalities in feedback processing in suicide attempters, adding to the deficits in reward anticipation. Prior studies have linked feedback-related delta power to reward processing, and our findings align with this, indicating similar deficits in children of suicide attempters and those with nonsuicidal self-injury.
+        Interestingly, there were no significant group differences in self-reported anticipatory and consummatory pleasure, which is consistent with mixed results from previous studies on anhedonia in suicide attempters. This study highlights that EEG/ERP measures may provide more objective insights into reward processing than self-reports. The observed differences in cue-P3 amplitude and delta power appeared independent of depression or anxiety symptoms, suggesting that these reward-related deficits are not simply due to these conditions.
+        Results suggest that suicide attempters, compared to non-attempters, might exhibit deficient initial responses to reward, which might then disrupt their ability to anticipate future rewards accurately. This is in line with the evidence that suicide attempters might tend to estimate the anticipated value of actions and events inaccurately and over-value their current emotional state. The findings highlight the centrality of multiple reward-related processes as potential contributors to deciding whether to attempt suicide.
+      </p>
+    </div>
   </div>
 
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  <style>
+    .bg-light-blue {
+      background-color: #e6f0fa;
+    }
+    .text-dark-blue {
+      color: #003366;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .btn-outline {
+      color: black;
+      background-color: white;
+      border: 2px solid black;
+    }
+    .btn-outline:hover {
+      background-color: #f0f0f0;
+    }
+    .research-project, .research-interest, .publications {
+      margin-bottom: 2rem;
+    }
+    .project-desc, .interest-desc, .publication-desc, .summary {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #003366;
+    }
+    .project-link, .publication-link {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .project-link:hover, .publication-link:hover {
+      text-decoration: underline;
+    }
+    .divider {
+      margin: 2rem 0;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
 </BaseLayout>

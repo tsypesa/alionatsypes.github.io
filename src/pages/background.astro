@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Background" sideBarActiveItemID="background">
+  <div class="pb-12 mt-5 bg-light-blue p-8 rounded-lg">
+    <div class="text-3xl w-full font-bold text-center text-dark-blue">Background</div>
+  </div>
+
+  <div class="section">
+    <div class="text-2xl font-bold mb-2 text-dark-blue">Education and Training</div>
+    <div class="education-entry">
+      <p><strong>2009-2012:</strong> Hunter College, NY - B.A., 2012, Magna Cum Laude</p>
+      <p>Honors Thesis Advisor: Douglas Mennin, Ph.D.</p>
+      <p>Major: Psychology</p>
+    </div>
+    <div class="education-entry">
+      <p><strong>2014-2020:</strong> Binghamton University, Binghamton, NY - Ph.D., 2020</p>
+      <p>Dissertation Advisor: Brandon Gibb, Ph.D.</p>
+      <p>Major: Clinical Psychology</p>
+    </div>
+    <div class="education-entry">
+      <p><strong>2019-2020:</strong> Western Psychiatric Hospital, Pittsburgh, PA - Internship</p>
+      <p>Directors: Michele Levine, Ph.D. & Tina Goldstein, Ph.D.</p>
+    </div>
+    <div class="education-entry">
+      <p><strong>2020-2023:</strong> University of Pittsburgh, Department of Psychiatry, Pittsburgh, PA - Postdoctoral Fellowship (T32)</p>
+      <p>Mentor: Alexandre Dombrovski, M.D.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text-2xl font-bold mb-2 text-dark-blue">Appointments and Positions</div>
+    <div class="position-entry">
+      <p><strong>2023-Present:</strong> University of Pittsburgh - Assistant Professor of Psychiatry</p>
+      <p>Location: Pittsburgh, PA</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text-2xl font-bold mb-2 text-dark-blue">Certification and Licensure</div>
+    <div class="certification-entry">
+      <p><strong>Medical or Other Professional Licensure:</strong></p>
+      <p>Pennsylvania State Board of Psychology (PS019474) - 2021-Present</p>
+    </div>
+  </div>
+
+  <style>
+    .bg-light-blue {
+      background-color: #e6f0fa;
+    }
+    .text-dark-blue {
+      color: #003366;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .education-entry,
+    .position-entry,
+    .certification-entry {
+      font-size: 1.2rem;
+      color: #003366; /* Dark blue color */
+      margin-bottom: 1rem;
+    }
+    .education-entry p,
+    .position-entry p,
+    .certification-entry p {
+      margin: 0.3rem 0;
+    }
+  </style>
+</BaseLayout>
