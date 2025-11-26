@@ -1,71 +1,108 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLine from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Background" sideBarActiveItemID="background">
-  <div class="pb-12 mt-5 bg-light-blue p-8 rounded-lg">
-    <div class="text-3xl w-full font-bold text-center text-dark-blue">Background</div>
+<BaseLayout title="Background" activeItemID="background">
+  <!-- Header -->
+  <div class="mb-12">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-text-primary mb-3">
+      Background
+    </h1>
+    <div class="w-16 h-1 bg-primary/30 rounded-full"></div>
   </div>
 
-  <div class="section">
-    <div class="text-2xl font-bold mb-2 text-dark-blue">Education and Training</div>
-    <div class="education-entry">
-      <p><strong>2009-2012:</strong> Hunter College, NY - B.A., 2012, Magna Cum Laude</p>
-      <p>Honors Thesis Advisor: Douglas Mennin, Ph.D.</p>
-      <p>Major: Psychology</p>
-    </div>
-    <div class="education-entry">
-      <p><strong>2014-2020:</strong> Binghamton University, Binghamton, NY - Ph.D., 2020</p>
-      <p>Dissertation Advisor: Brandon Gibb, Ph.D.</p>
-      <p>Major: Clinical Psychology</p>
-    </div>
-    <div class="education-entry">
-      <p><strong>2019-2020:</strong> Western Psychiatric Hospital, Pittsburgh, PA - Internship</p>
-      <p>Directors: Michele Levine, Ph.D. & Tina Goldstein, Ph.D.</p>
-    </div>
-    <div class="education-entry">
-      <p><strong>2020-2023:</strong> University of Pittsburgh, Department of Psychiatry, Pittsburgh, PA - Postdoctoral Fellowship (T32)</p>
-      <p>Mentor: Alexandre Dombrovski, M.D.</p>
-    </div>
-  </div>
+  <!-- Education and Training Section -->
+  <section class="mb-16">
+    <h2 class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
+      Education and Training
+    </h2>
 
-  <div class="section">
-    <div class="text-2xl font-bold mb-2 text-dark-blue">Appointments and Positions</div>
-    <div class="position-entry">
-      <p><strong>2023-Present:</strong> University of Pittsburgh - Assistant Professor of Psychiatry</p>
-      <p>Location: Pittsburgh, PA</p>
-    </div>
-  </div>
+    <div class="time-line-container">
+      <TimeLine
+        title="University of Pittsburgh"
+        subtitle="Department of Psychiatry, Pittsburgh, PA"
+        date="2020-2023"
+      >
+        <p>Postdoctoral Fellowship (T32)</p>
+      </TimeLine>
 
-  <div class="section">
-    <div class="text-2xl font-bold mb-2 text-dark-blue">Certification and Licensure</div>
-    <div class="certification-entry">
-      <p><strong>Medical or Other Professional Licensure:</strong></p>
-      <p>Pennsylvania State Board of Psychology (PS019474) - 2021-Present</p>
-    </div>
-  </div>
+      <TimeLine
+        title="Western Psychiatric Hospital"
+        subtitle="Pittsburgh, PA"
+        date="2019-2020"
+      >
+        <p>Clinical Psychology Internship</p>
+      </TimeLine>
 
-  <style>
-    .bg-light-blue {
-      background-color: #e6f0fa;
-    }
-    .text-dark-blue {
-      color: #003366;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .education-entry,
-    .position-entry,
-    .certification-entry {
-      font-size: 1.2rem;
-      color: #003366; /* Dark blue color */
-      margin-bottom: 1rem;
-    }
-    .education-entry p,
-    .position-entry p,
-    .certification-entry p {
-      margin: 0.3rem 0;
-    }
-  </style>
+      <TimeLine
+        title="Binghamton University"
+        subtitle="Binghamton, NY"
+        date="2014-2020"
+      >
+        <p>Ph.D. in Clinical Psychology</p>
+      </TimeLine>
+
+      <TimeLine
+        title="Hunter College"
+        subtitle="New York, NY"
+        date="2009-2012"
+      >
+        <p>B.A., Magna Cum Laude</p>
+        <p>Major: Psychology</p>
+      </TimeLine>
+    </div>
+  </section>
+
+  <!-- Appointments Section -->
+  <section class="mb-16">
+    <h2 class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
+      Appointments and Positions
+    </h2>
+
+    <div class="bg-white rounded-xl p-6 md:p-8 border border-border-warm">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span class="text-sm font-medium text-primary mb-1 block">2023 - Present</span>
+          <h3 class="font-heading text-xl font-semibold text-text-primary mb-1">
+            Assistant Professor of Psychiatry
+          </h3>
+          <p class="text-text-secondary">University of Pittsburgh, Pittsburgh, PA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification Section -->
+  <section>
+    <h2 class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
+      Certification and Licensure
+    </h2>
+
+    <div class="bg-white rounded-xl p-6 md:p-8 border border-border-warm">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span class="text-sm font-medium text-secondary mb-1 block">2021 - Present</span>
+          <h3 class="font-heading text-xl font-semibold text-text-primary mb-1">
+            Licensed Psychologist
+          </h3>
+          <p class="text-text-secondary">Pennsylvania State Board of Psychology (PS019474)</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

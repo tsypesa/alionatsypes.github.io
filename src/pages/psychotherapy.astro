@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Psychotherapy" activeItemID="psychotherapy">
+  <!-- Header -->
+  <div class="mb-12">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-text-primary mb-3">
+      Psychotherapy
+    </h1>
+    <div class="w-16 h-1 bg-primary/30 rounded-full"></div>
+  </div>
+
+  <!-- Clinical Practice Section -->
+  <section class="mb-16">
+    <div class="bg-white rounded-xl p-6 md:p-8 border border-border-warm">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl font-semibold text-text-primary mb-4">
+            Clinical Practice
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-text-secondary leading-relaxed mb-6">
+        I am a licensed clinical psychologist practicing part-time at the UPMC Western Psychological Associates. I have expertise in several therapeutic modalities, including cognitive behavioral therapy (CBT) and Acceptance and Commitment Therapy (ACT).
+      </p>
+
+      <p class="text-text-secondary leading-relaxed mb-6">
+        I specialize in working with diagnostically diverse adults striving to reconnect with their core values and pursue a more meaningful, fulfilling life. My therapeutic approach incorporates mindfulness, behavioral change strategies, and experiential exercises to foster psychological flexibility, allowing clients to clarify their values and translate them into actionable steps that lead to a richer, more authentic life experience.
+      </p>
+
+      <a
+        href="https://providers.upmc.com/provider/aliona-tsypes/2637732"
+        target="_blank"
+        class="btn-primary-custom inline-flex"
+      >
+        View Provider Profile
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Therapeutic Approach Section -->
+  <section class="mb-16">
+    <h2 class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
+      Therapeutic Approach
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-border-warm">
+        <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <h3 class="font-heading text-lg font-semibold text-text-primary mb-2">
+          Cognitive Behavioral Therapy (CBT)
+        </h3>
+        <p class="text-text-secondary text-sm">
+          Evidence-based approach focusing on identifying and changing unhelpful thought patterns and behaviors.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-border-warm">
+        <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="font-heading text-lg font-semibold text-text-primary mb-2">
+          Acceptance and Commitment Therapy (ACT)
+        </h3>
+        <p class="text-text-secondary text-sm">
+          Helping clients accept difficult thoughts and feelings while committing to actions aligned with their values.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-border-warm">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <h3 class="font-heading text-lg font-semibold text-text-primary mb-2">
+          Mindfulness-Based Approaches
+        </h3>
+        <p class="text-text-secondary text-sm">
+          Incorporating present-moment awareness and non-judgmental observation to enhance psychological well-being.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 border border-border-warm">
+        <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+          </svg>
+        </div>
+        <h3 class="font-heading text-lg font-semibold text-text-primary mb-2">
+          Values-Based Living
+        </h3>
+        <p class="text-text-secondary text-sm">
+          Helping clients clarify their core values and take committed action toward a more meaningful life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Supervision Section -->
+  <section>
+    <div class="bg-surface rounded-xl p-6 md:p-8 border border-border-warm">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl font-semibold text-text-primary mb-4">
+            Clinical Supervision
+          </h2>
+          <p class="text-text-secondary leading-relaxed">
+            I provide clinical supervision through the UPMC Western Psychiatric Hospital Clinical Psychology Internship Program.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

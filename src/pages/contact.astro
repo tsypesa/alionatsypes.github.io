@@ -2,53 +2,111 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Contact">
-  <div class="contact-page">
-   
-    <p>If you have any questions or would like to get in touch, please fill out the form below. Your message will be sent directly to my email.</p>
-    <form action="https://formspree.io/f/xyzgyvyn" method="POST" class="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+<BaseLayout title="Contact" activeItemID="contact">
+  <!-- Header -->
+  <div class="mb-12">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-text-primary mb-3">
+      Contact
+    </h1>
+    <div class="w-16 h-1 bg-primary/30 rounded-full"></div>
   </div>
 
-  <style>
-    .contact-page {
-      max-width: 600px;
-      margin: auto;
-      padding: 1rem;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-form label {
-      margin-top: 1rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      margin-top: 0.5rem;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .contact-form button {
-      margin-top: 1rem;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 4px;
-      background-color: #007BFF;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .contact-form button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <div class="max-w-xl">
+    <p class="text-text-secondary text-lg leading-relaxed mb-8">
+      If you have any questions or would like to get in touch, please fill out the form below. Your message will be sent directly to my email.
+    </p>
+
+    <form action="https://formspree.io/f/xyzgyvyn" method="POST" class="space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-medium text-text-primary mb-2">
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="w-full px-4 py-3 bg-white border border-border-warm rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+          placeholder="Your name"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-text-primary mb-2">
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full px-4 py-3 bg-white border border-border-warm rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+          placeholder="your.email@example.com"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-text-primary mb-2">
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="w-full px-4 py-3 bg-white border border-border-warm rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-y"
+          placeholder="Your message..."
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="btn-primary-custom w-full sm:w-auto"
+      >
+        Send Message
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+    </form>
+
+    <!-- Alternative Contact -->
+    <div class="mt-12 pt-8 border-t border-border-warm">
+      <h2 class="font-heading text-xl font-semibold text-text-primary mb-4">
+        Other Ways to Connect
+      </h2>
+      <div class="space-y-3">
+        <a
+          href="mailto:tsypesa@upmc.edu"
+          class="flex items-center gap-3 text-text-secondary hover:text-primary transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          tsypesa@upmc.edu
+        </a>
+        <a
+          href="https://bsky.app/profile/atsypes.bsky.social"
+          target="_blank"
+          class="flex items-center gap-3 text-text-secondary hover:text-primary transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/>
+          </svg>
+          Bluesky
+        </a>
+        <a
+          href="https://www.linkedin.com/in/aliona-tsypes-1520525b/"
+          target="_blank"
+          class="flex items-center gap-3 text-text-secondary hover:text-primary transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="4.983" cy="5.009" r="2.188"></circle>
+            <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
 </BaseLayout>

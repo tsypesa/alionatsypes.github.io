@@ -2,120 +2,179 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Home" sideBarActiveItemID="home">
-  <div class="pb-12 mt-5 bg-light-blue p-8 rounded-lg">
-    <div class="text-5xl font-bold text-dark-blue">Aliona Tsypes, PhD</div>
-    <div class="text-3xl py-3 font-bold text-dark-blue"></div>
-    <div class="py-2">
-      <text class="text-lg text-dark-blue">
-        I am an Assistant Professor of Psychiatry at the University of Pittsburgh and a licensed psychologist. In my research, I combine electroencephalography, computational modeling, and ecological momentary assessment to improve the understanding and treatment of suicidal thoughts and behaviors. I am particularly interested in uncovering how alterations in value-based decision-making contribute to suicide risk and how protective factors may buffer against this risk.
-      </text>
-    </div>
-    <div class="mt-8">
-      <a class="btn btn-outline" href="https://www.psychiatry.pitt.edu/about-us/our-people/faculty/aliona-tsypes-phd" target="_blank"> Faculty Page </a>
-      <a href="https://scholar.google.com/citations?user=h30aBXUAAAAJ&hl=en" target="_blank" class="btn btn-outline ml-5">
-        Google Scholar
-      </a>
-      <a href="/cv.pdf" target="_blank" class="btn btn-outline ml-5">
-        CV
-      </a>
-    </div>
-  </div>
+<BaseLayout title="Home" activeItemID="home">
+  <!-- Hero Section -->
+  <section class="py-8 md:py-12">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+      <!-- Profile Photo -->
+      <div class="flex-shrink-0">
+        <img
+          src="/profile.webp"
+          alt="Dr. Aliona Tsypes"
+          class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover ring-4 ring-primary/10 shadow-lg"
+        />
+      </div>
 
-  <div class="divider my-8"></div>
+      <!-- Bio Content -->
+      <div class="text-center md:text-left">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-text-primary mb-3">
+          Aliona Tsypes, PhD
+        </h1>
+        <p class="text-xl text-primary font-medium mb-4">
+          Assistant Professor of Psychiatry
+        </p>
+        <p class="text-text-secondary text-lg leading-relaxed mb-8">
+          I am an Assistant Professor of Psychiatry at the University of Pittsburgh and a licensed psychologist. In my research, I combine electroencephalography, computational modeling, and ecological momentary assessment to improve the understanding and treatment of suicidal thoughts and behaviors. I am particularly interested in uncovering how alterations in value-based decision-making contribute to suicide risk and how protective factors may buffer against this risk.
+        </p>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 text-dark-blue">Representative Publications</div>
-  </div>
-  <div class="publications">
-    <div class="publication">
-      <p class="publication-desc">
-        <a href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2821075" target="_blank" class="publication-link">Tsypes, A., Hallquist, M.N., Ianni, A., Kaurin, A., Wright, A.G.C., & Dombrovski, A.Y. (in press). Exploration-exploitation and suicidal behavior in borderline personality disorder and depression. JAMA Psychiatry.</a>
-      </p>
-      <p class="summary">
-        This study used behavioral experiments and reinforcement learning (RL) modeling to explore decision-making in people with borderline personality disorder (BPD) and late-life depression. We found that serious suicidal behavior is linked with the inability to shift away from unrewarded choices, resulting in under-exploration. This inflexible behavior predicted daily suicidal ideation. Conversely, low-lethality suicidal behavior was associated with excessive shifts after both rewarded and unrewarded actions. These patterns were not explained by confounding factors like medication exposure or depressive symptoms.
-        Our findings align with previous research linking high-lethality suicidal behavior to deficits in learning and behavioral adaptation. High-risk individuals tended to stick with unrewarded choices, exploring only a limited subset of options under time pressure. This behavior diverges from other psychopathologies, such as schizophrenia, and suggests multiple deficits contribute to suicidal risk. The results support the view that suicidal behavior can be seen as a decision accident, where crisis demands exceed decision capacity. In therapy, practicing exploration of new solutions may help people avoid defaulting to suicide-focused options.
-        The study challenges the continuum model of suicidal behavior, showing consistent behavioral differences between high- and low-lethality attempters. High-lethality attempts are marked by narrow and inflexible choices, while low-lethality attempts involve excessive behavioral plasticity in response to failures. Maximum attempt lethality should be considered a key dimension in studying suicidal behavior. Contrary to expectations, we found no evidence that suicidal individuals fail to exploit the best previously sampled options, suggesting that suicidal behavior reflects a mix of overly rigid and erratic patterns rather than simple insensitivity to long-term value. Overall, these findings highlight the need for a broader understanding of individual differences in decision-making related to suicide risk.
-      </p>
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          <a
+            href="https://www.psychiatry.pitt.edu/about-us/our-people/faculty/aliona-tsypes-phd"
+            target="_blank"
+            class="btn-primary-custom"
+          >
+            Faculty Page
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=h30aBXUAAAAJ&hl=en"
+            target="_blank"
+            class="btn-outline-custom"
+          >
+            Google Scholar
+          </a>
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            class="btn-outline-custom"
+          >
+            CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="border-t border-border-warm my-12"></div>
+
+  <!-- Publications Section -->
+  <section>
+    <div class="mb-10">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-primary mb-3">
+        Representative Publications
+      </h2>
+      <div class="w-16 h-1 bg-primary/30 rounded-full"></div>
     </div>
 
-    <div class="publication">
-      <p class="publication-desc">
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8957575/" target="_blank" class="publication-link">Tsypes A, Kaurin A, Wright AGC, Hallquist MN, Dombrovski AY. Protective effects of reasons for living against suicidal ideation in daily life. J Psychiatr Res. 2022 Apr;148:174–180.</a>
-      </p>
-      <p class="summary">
-        This study examined the daily link between Reasons for Living (RFL) and suicidal ideation in people with borderline personality disorder (BPD), focusing on the moderating effects of the Big Five personality traits. Daily endorsements of RFL were negatively associated with suicidal ideation, meaning on days when people thought more about their RFL, they were less likely to think of suicide. However, individuals with higher average RFL did not necessarily report lower suicidal ideation levels. Daily fluctuations accounted for about 40% of RFL variance, suggesting a mix of state- and trait-like influences. Notably, suicide attempters endorsed RFL less frequently than non-attempters, but the protective effect of RFL was similar across both groups and particularly strong in those with higher average suicidal ideation.
-        The study also found that extraversion influenced RFL. Those high in extraversion thought about their RFL more frequently, though this weakened the protective effect against daily suicidal ideation, especially in those with lower extraversion. This suggests that the cognitive and affective processes involved in RFL contemplation are diverse, with only some offering protection against suicidal thoughts. Clinically, these findings highlight the importance of making RFL more salient in the moment, particularly for those with high suicidal ideation. Interventions should focus on increasing the emotional value of RFL, such as through savoring or positive affect stimulation. This approach could be beneficial in preventing suicidal crises by making deterrents more accessible and emotionally impactful.
-      </p>
-    </div>
+    <div class="space-y-6">
+      <!-- Publication 1 -->
+      <article class="bg-white rounded-xl p-6 md:p-8 border border-border-warm card-hover">
+        <a
+          href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2821075"
+          target="_blank"
+          class="block group"
+        >
+          <h3 class="font-heading text-lg md:text-xl font-semibold text-text-primary group-hover:text-primary transition-colors mb-3">
+            Exploration-exploitation and suicidal behavior in borderline personality disorder and depression
+          </h3>
+          <p class="text-sm text-text-secondary mb-2">
+            Tsypes, A., Hallquist, M.N., Ianni, A., Kaurin, A., Wright, A.G.C., & Dombrovski, A.Y.
+          </p>
+          <p class="text-sm text-accent font-medium mb-4">
+            JAMA Psychiatry. 2024;81(10):1010-1019
+          </p>
+        </a>
+        <details class="text-text-secondary text-sm leading-relaxed">
+          <summary class="cursor-pointer text-primary font-medium hover:underline">
+            Read Summary
+          </summary>
+          <p class="mt-3 pl-4 border-l-2 border-primary/30">
+            This study used behavioral experiments and reinforcement learning (RL) modeling to explore decision-making in people with borderline personality disorder (BPD) and late-life depression. We found that serious suicidal behavior is linked with the inability to shift away from unrewarded choices, resulting in under-exploration. This inflexible behavior predicted daily suicidal ideation. Conversely, low-lethality suicidal behavior was associated with excessive shifts after both rewarded and unrewarded actions. These patterns were not explained by confounding factors like medication exposure or depressive symptoms.
+          </p>
+        </details>
+      </article>
 
-    <div class="publication">
-      <p class="publication-desc">
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8893041/" target="_blank" class="publication-link">Tsypes A, Szanto K, Bridge JA, Brown VM, Keilp JG, Dombrovski AY. Delay discounting in suicidal behavior: Myopic preference or inconsistent valuation? J Psychopathol Clin Sci. 2022 Jan;131(1):34–44.</a>
-      </p>
-      <p class="summary">
-        Across three samples, high-lethality suicide attempters were the least sensitive to the overall values of prospects. This link between inconsistent valuation and the severity of suicidal behavior, robust against cognitive confounds and comorbidities, suggests a specific role for this deficit in suicidal behavior.
-        High discount rates are often associated with impulsivity and externalizing psychopathology, but our findings highlight inconsistent valuation as a critical vulnerability in suicidal behavior. This inconsistency hinders the ability to integrate choice attributes like magnitude and probability, leading to poor decision-making. In crises, this may make people more likely to misestimate or fluctuate in the perceived value of suicide, neglecting deterrents and the benefits of alternative solutions.
-        Our study, validated across three clinical samples, emphasizes the importance of considering both consistency and discount rates in delay discounting. Clinically, interventions during moments of suicidal ambivalence—when the values of suicide versus alternative options are close—can be effective. Strategies should focus on enhancing deterrents, reinforcing alternative solutions, and deferring final decisions. Psychoeducation on decision competence impairments, such as inconsistent valuation, can help recruit support and develop compensatory strategies. These findings support the decision accident account of suicidal behavior, enriching the literature on the neurocognitive diathesis.
-      </p>
-    </div>
+      <!-- Publication 2 -->
+      <article class="bg-white rounded-xl p-6 md:p-8 border border-border-warm card-hover">
+        <a
+          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8957575/"
+          target="_blank"
+          class="block group"
+        >
+          <h3 class="font-heading text-lg md:text-xl font-semibold text-text-primary group-hover:text-primary transition-colors mb-3">
+            Protective effects of reasons for living against suicidal ideation in daily life
+          </h3>
+          <p class="text-sm text-text-secondary mb-2">
+            Tsypes A, Kaurin A, Wright AGC, Hallquist MN, Dombrovski AY.
+          </p>
+          <p class="text-sm text-accent font-medium mb-4">
+            J Psychiatr Res. 2022 Apr;148:174–180
+          </p>
+        </a>
+        <details class="text-text-secondary text-sm leading-relaxed">
+          <summary class="cursor-pointer text-primary font-medium hover:underline">
+            Read Summary
+          </summary>
+          <p class="mt-3 pl-4 border-l-2 border-primary/30">
+            This study examined the daily link between Reasons for Living (RFL) and suicidal ideation in people with borderline personality disorder (BPD), focusing on the moderating effects of the Big Five personality traits. Daily endorsements of RFL were negatively associated with suicidal ideation, meaning on days when people thought more about their RFL, they were less likely to think of suicide. The study also found that extraversion influenced RFL. Those high in extraversion thought about their RFL more frequently, though this weakened the protective effect against daily suicidal ideation.
+          </p>
+        </details>
+      </article>
 
-    <div class="publication">
-      <p class="publication-desc">
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7581535/" target="_blank" class="publication-link">Tsypes A, Owens M, Gibb BE. Reward Responsiveness in Suicide Attempters: An Electroencephalography/Event-Related Potential Study. Biol Psychiatry Cogn Neurosci Neuroimaging. 2021 Jan;6(1):99–106.</a>
-      </p>
-      <p class="summary">
-        This study aimed to investigate reward-related abnormalities in suicide attempters using the Research Domain Criteria (RDoC) project of the National Institute of Mental Health framework. We found significant differences in the cue-P3 amplitude between suicide attempters and non-attempters, indicating that attempters have trouble distinguishing between reward-predicting and non-reward-predicting stimuli. This deficit in reward anticipation aligns with previous findings in adolescent self-injurious individuals but extends to adult suicide attempters of both sexes. These results suggest that suicide attempters have specific deficits in attention allocation towards reward-predicting stimuli. 
-        Additionally, while there were no significant differences in the ΔRewP amplitude, suicide attempters exhibited lower feedback-related delta power in the gain versus loss condition compared to non-attempters. This suggests specific abnormalities in feedback processing in suicide attempters, adding to the deficits in reward anticipation. Prior studies have linked feedback-related delta power to reward processing, and our findings align with this, indicating similar deficits in children of suicide attempters and those with nonsuicidal self-injury.
-        Interestingly, there were no significant group differences in self-reported anticipatory and consummatory pleasure, which is consistent with mixed results from previous studies on anhedonia in suicide attempters. This study highlights that EEG/ERP measures may provide more objective insights into reward processing than self-reports. The observed differences in cue-P3 amplitude and delta power appeared independent of depression or anxiety symptoms, suggesting that these reward-related deficits are not simply due to these conditions.
-        Results suggest that suicide attempters, compared to non-attempters, might exhibit deficient initial responses to reward, which might then disrupt their ability to anticipate future rewards accurately. This is in line with the evidence that suicide attempters might tend to estimate the anticipated value of actions and events inaccurately and over-value their current emotional state. The findings highlight the centrality of multiple reward-related processes as potential contributors to deciding whether to attempt suicide.
-      </p>
-    </div>
-  </div>
+      <!-- Publication 3 -->
+      <article class="bg-white rounded-xl p-6 md:p-8 border border-border-warm card-hover">
+        <a
+          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8893041/"
+          target="_blank"
+          class="block group"
+        >
+          <h3 class="font-heading text-lg md:text-xl font-semibold text-text-primary group-hover:text-primary transition-colors mb-3">
+            Delay discounting in suicidal behavior: Myopic preference or inconsistent valuation?
+          </h3>
+          <p class="text-sm text-text-secondary mb-2">
+            Tsypes A, Szanto K, Bridge JA, Brown VM, Keilp JG, Dombrovski AY.
+          </p>
+          <p class="text-sm text-accent font-medium mb-4">
+            J Psychopathol Clin Sci. 2022 Jan;131(1):34–44
+          </p>
+        </a>
+        <details class="text-text-secondary text-sm leading-relaxed">
+          <summary class="cursor-pointer text-primary font-medium hover:underline">
+            Read Summary
+          </summary>
+          <p class="mt-3 pl-4 border-l-2 border-primary/30">
+            Across three samples, high-lethality suicide attempters were the least sensitive to the overall values of prospects. This link between inconsistent valuation and the severity of suicidal behavior, robust against cognitive confounds and comorbidities, suggests a specific role for this deficit in suicidal behavior. Our study highlights the importance of considering both consistency and discount rates in delay discounting. Clinically, interventions during moments of suicidal ambivalence can be effective.
+          </p>
+        </details>
+      </article>
 
-  <style>
-    .bg-light-blue {
-      background-color: #e6f0fa;
-    }
-    .text-dark-blue {
-      color: #003366;
-    }
-    .btn {
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .btn-outline {
-      color: black;
-      background-color: white;
-      border: 2px solid black;
-    }
-    .btn-outline:hover {
-      background-color: #f0f0f0;
-    }
-    .research-project, .research-interest, .publications {
-      margin-bottom: 2rem;
-    }
-    .project-desc, .interest-desc, .publication-desc, .summary {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      color: #003366;
-    }
-    .project-link, .publication-link {
-      color: #007BFF;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .project-link:hover, .publication-link:hover {
-      text-decoration: underline;
-    }
-    .divider {
-      margin: 2rem 0;
-      border-bottom: 1px solid #ccc;
-    }
-  </style>
+      <!-- Publication 4 -->
+      <article class="bg-white rounded-xl p-6 md:p-8 border border-border-warm card-hover">
+        <a
+          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7581535/"
+          target="_blank"
+          class="block group"
+        >
+          <h3 class="font-heading text-lg md:text-xl font-semibold text-text-primary group-hover:text-primary transition-colors mb-3">
+            Reward Responsiveness in Suicide Attempters: An Electroencephalography/Event-Related Potential Study
+          </h3>
+          <p class="text-sm text-text-secondary mb-2">
+            Tsypes A, Owens M, Gibb BE.
+          </p>
+          <p class="text-sm text-accent font-medium mb-4">
+            Biol Psychiatry Cogn Neurosci Neuroimaging. 2021 Jan;6(1):99–106
+          </p>
+        </a>
+        <details class="text-text-secondary text-sm leading-relaxed">
+          <summary class="cursor-pointer text-primary font-medium hover:underline">
+            Read Summary
+          </summary>
+          <p class="mt-3 pl-4 border-l-2 border-primary/30">
+            This study investigated reward-related abnormalities in suicide attempters using the RDoC framework. We found significant differences in the cue-P3 amplitude between suicide attempters and non-attempters, indicating that attempters have trouble distinguishing between reward-predicting and non-reward-predicting stimuli. This deficit in reward anticipation aligns with previous findings and suggests that suicide attempters have specific deficits in attention allocation towards reward-predicting stimuli.
+          </p>
+        </details>
+      </article>
+    </div>
+  </section>
 </BaseLayout>
