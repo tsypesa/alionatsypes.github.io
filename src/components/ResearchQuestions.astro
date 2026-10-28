@@ -1,0 +1,36 @@
+---
+import type { ResearchQuestion } from '../data/publications';
+
+interface Props {
+  questions: ResearchQuestion[];
+}
+
+const { questions } = Astro.props;
+---
+
+<div class="space-y-14">
+  {questions.map(({ id, question, paragraphs, publications }) => (
+    <section id={id} aria-labelledby={`${id}-heading`} class="scroll-mt-28">
+      <h3 id={`${id}-heading`} class="font-heading text-xl md:text-2xl font-semibold text-text-primary mb-5">{question}</h3>
+      <div class="text-text-secondary leading-relaxed space-y-5 mb-6">
+        {paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <p class="font-medium text-text-primary mb-3">Selected publications</p>
+      <div class="bg-white rounded-xl px-6 md:px-8 border border-border-warm">
+        <ul class="divide-y divide-border-warm">
+          {publications.map(publication => (
+            <li class="py-5">
+              <a href={publication.url} target="_blank" rel="noopener noreferrer" class="text-teal-700 text-sm leading-relaxed underline decoration-primary/30 underline-offset-4 hover:decoration-teal-700">
+                {publication.title}
+              </a>
+              <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+                {publication.shortAuthors} · {publication.citation}
+                {publication.coauthored && <span class="font-medium"> · Coauthored study</span>}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  ))}
+</div>
