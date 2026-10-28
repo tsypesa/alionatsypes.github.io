@@ -26,7 +26,7 @@ const navItems = [
             </a>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-8">
+            <div class="hidden lg:flex items-center gap-8">
                 {navItems.map(item => (
                     <a
                         href={item.href}
@@ -40,7 +40,7 @@ const navItems = [
             </div>
 
             <!-- Social Icons (Desktop) -->
-            <div class="hidden md:flex items-center gap-4">
+            <div class="hidden lg:flex items-center gap-4">
                 <a
                     href="https://bsky.app/profile/atsypes.bsky.social"
                     target="_blank"
@@ -69,8 +69,10 @@ const navItems = [
             <!-- Mobile Menu Button -->
             <button
                 id="mobile-menu-btn"
-                class="md:hidden p-2 text-text-secondary hover:text-primary transition-colors"
+                class="lg:hidden p-2 text-text-secondary hover:text-primary transition-colors"
                 aria-label="Open menu"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -83,7 +85,7 @@ const navItems = [
 </header>
 
 <!-- Mobile Navigation Overlay -->
-<div id="mobile-menu" class="fixed inset-0 z-[60] bg-bg-warm transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+<div id="mobile-menu" inert class="fixed inset-0 z-[60] bg-bg-warm transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
     <div class="flex flex-col h-full">
         <!-- Close Button -->
         <div class="flex justify-end p-6">
@@ -164,25 +166,40 @@ const navItems = [
 </div>
 
 <script>
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const closeBtn = document.getElementById('close-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const initializeMobileMenu = () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    menuBtn?.addEventListener('click', () => {
-        mobileMenu?.classList.remove('translate-x-full');
-        document.body.classList.add('overflow-hidden');
-    });
+        if (!menuBtn || !closeBtn || !mobileMenu || menuBtn.dataset.menuReady) return;
+        menuBtn.dataset.menuReady = 'true';
 
-    closeBtn?.addEventListener('click', () => {
-        mobileMenu?.classList.add('translate-x-full');
-        document.body.classList.remove('overflow-hidden');
-    });
+        const setOpen = (open: boolean) => {
+            mobileMenu.classList.toggle('translate-x-full', !open);
+            mobileMenu.inert = !open;
+            menuBtn.setAttribute('aria-expanded', String(open));
+            document.body.classList.toggle('overflow-hidden', open);
+        };
 
-    // Close menu when clicking a link
-    mobileMenu?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu?.classList.add('translate-x-full');
-            document.body.classList.remove('overflow-hidden');
+        const closeMenu = () => {
+            setOpen(false);
+            menuBtn.focus();
+        };
+
+        setOpen(false);
+        menuBtn.addEventListener('click', () => {
+            setOpen(true);
+            closeBtn.focus();
         });
-    });
+        closeBtn.addEventListener('click', closeMenu);
+        mobileMenu.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeMenu();
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setOpen(false));
+        });
+    };
+
+    initializeMobileMenu();
+    document.addEventListener('astro:page-load', initializeMobileMenu);
 </script>
