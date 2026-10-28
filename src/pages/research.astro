@@ -1,68 +1,52 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ResearchQuestions from "../components/ResearchQuestions.astro";
+import { selectedResearchQuestions } from "../data/publications";
 ---
 
-<BaseLayout title="Research" activeItemID="research">
-  <!-- Header -->
+<BaseLayout title="Research | Aliona Tsypes, PhD" activeItemID="research">
   <div class="mb-12">
     <h1 class="font-heading text-4xl md:text-5xl font-bold text-text-primary mb-3">
       Research
     </h1>
-    <div class="w-16 h-1 bg-primary/30 rounded-full"></div>
+    <div class="w-16 h-1 bg-primary/30 rounded-full mb-6"></div>
+    <p class="text-text-secondary text-lg leading-relaxed">
+      My research seeks to better understand suicidal thoughts and behavior by examining the processes associated with suicidal behavior, the circumstances in which suicidal ideation fluctuates, and individual differences in these experiences. I combine experimental, computational, neural, clinical, and intensive longitudinal approaches to investigate these complementary questions.
+    </p>
   </div>
 
-  <!-- Current Grant Support -->
-  <section class="mb-16">
-    <h2 class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
-      Current Grant Support
+  <section aria-labelledby="research-questions-heading" class="mb-16">
+    <h2 id="research-questions-heading" class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
+      Selected Research Questions
     </h2>
+    <ResearchQuestions questions={selectedResearchQuestions} />
+  </section>
 
+  <section aria-labelledby="support-heading" class="border-t border-border-warm pt-12">
+    <h2 id="support-heading" class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
+      Research Support
+    </h2>
     <article class="bg-white rounded-xl p-6 md:p-8 border border-border-warm">
       <div class="flex flex-wrap items-center gap-3 mb-4">
-        <span class="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
-          K23 MH130664
-        </span>
-        <span class="text-sm text-text-muted">2023-2028</span>
+        <span class="px-3 py-1 bg-primary/10 text-teal-700 text-sm font-medium rounded-full">NIMH K23 MH130664</span>
+        <span class="text-sm text-text-secondary">2023–2028 · Principal Investigator</span>
       </div>
-
       <h3 class="font-heading text-xl font-semibold text-text-primary mb-4">
         Cortical Oscillatory Dynamics and Decision Deficits in Suicidal Behavior
       </h3>
-
-      <div class="grid sm:grid-cols-2 gap-4 mb-4 text-sm">
-        <div>
-          <span class="text-text-muted">Role:</span>
-          <span class="text-text-primary font-medium ml-2">PI</span>
-        </div>
-        <div>
-          <span class="text-text-muted">Source:</span>
-          <span class="text-text-primary font-medium ml-2">NIMH, $916,893</span>
-        </div>
-      </div>
-
       <p class="text-text-secondary leading-relaxed mb-4">
-        When faced with a crisis, some people but not others transition from thinking about suicide to acting on these thoughts. This project will use a formal theoretical framework combined with electroencephalography to test the hypothesis that individuals at risk for suicide become cognitively overwhelmed under challenging life circumstances and make poor choices as a result. The anticipated impact of this proposal includes the identification of more precise targets for cognitive clinical interventions.
+        This project uses EEG and behavioral experiments to investigate how cognitive demands affect decision-making in people with different histories of suicidal thoughts and behavior. It tests how limits on cognitive resources relate to decision processes relevant to suicidal behavior.
       </p>
-
-      <a
-        href="https://reporter.nih.gov/search/4ctwTujJIkGsdbce0hHGVA/project-details/10841630"
-        target="_blank"
-        class="inline-flex items-center gap-2 text-primary hover:underline font-medium text-sm"
-      >
+      <a href="https://reporter.nih.gov/search/4ctwTujJIkGsdbce0hHGVA/project-details/10841630" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-teal-700 underline underline-offset-4 hover:decoration-primary font-medium text-sm">
         View on NIH RePORTER
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
       </a>
     </article>
-  </section>
 
-  <!-- Prior Grant Support -->
-  <section>
-    <h2 class="font-heading text-2xl md:text-3xl font-bold text-text-primary mb-8">
-      Prior Grant Support
-    </h2>
-
+    <details class="mt-8">
+      <summary class="cursor-pointer font-heading text-xl font-semibold text-text-primary hover:text-teal-700">
+        Previous research support and awards
+      </summary>
+      <div class="mt-6">
     <div class="space-y-6">
       <!-- F31 Grant -->
       <article class="bg-white rounded-xl p-6 md:p-8 border border-border-warm">
@@ -89,7 +73,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <p class="text-text-secondary leading-relaxed mb-4">
-          This study aimed to uncover the factors that increase risk for suicide attempts by comprehensively examining reward-related processes. Results suggest that suicide attempters, compared to non-attempters, might exhibit deficient initial responses to reward, which might then disrupt their ability to accurately anticipate future rewards.
+          This award supported EEG/ERP research on reward anticipation and initial reward responses in adults with and without a history of suicide attempts.
         </p>
 
         <a
@@ -206,5 +190,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </article>
       </div>
     </div>
+      </div>
+    </details>
   </section>
 </BaseLayout>
